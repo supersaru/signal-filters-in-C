@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-double movingAvg(double *ptrArrNumbers, long *ptrSum, int pos, int len, double nextNum)
+double movingAvg(double *ptrArrNumbers, double *ptrSum, int pos, double len, double nextNum)
 {
   *ptrSum = *ptrSum - ptrArrNumbers[pos] + nextNum;
   //make nextNum the next position in the input array
@@ -17,14 +17,14 @@ int main()
 
   int pos = 0;
   int newAvg = 0;
-  long sum = 0;
-  int len = sizeof(filterdata) / sizeof(double);
+  double sum = 0;
+  int len = sizeof(filterData) / sizeof(double);
   int count = sizeof(sample) / sizeof(double);
 
   for (int i = 0; i < count; i++) {
     newAvg = movingAvg(filterData, &sum, pos, len, sample[i]);
     printf("New average is %d\n", newAvg);
-    pos++
+    pos++;
     if (pos >= len) {
       pos = 0;
     }
