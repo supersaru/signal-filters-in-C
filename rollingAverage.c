@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//This function removes the last value of the input array and adds the most recent before dividing the sum
 double movingAvg(double *ptrArrNumbers, double *ptrSum, int pos, double len, double nextNum)
 {
   *ptrSum = *ptrSum - ptrArrNumbers[pos] + nextNum;
@@ -22,6 +23,7 @@ int main()
   int len = sizeof(filterData) / sizeof(double);
   int count = sizeof(sample) / sizeof(double);
 
+  //Loops through data array and finds averages
   for (int i = 0; i < count; i++) {
     newAvg = movingAvg(filterData, &sum, pos, len, sample[i]);
     printf("New average is %d\n", newAvg);
