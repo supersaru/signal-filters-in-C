@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 double movingAvg(double *ptrArrNumbers, double *ptrSum, int pos, double len, double nextNum)
 {
   *ptrSum = *ptrSum - ptrArrNumbers[pos] + nextNum;
