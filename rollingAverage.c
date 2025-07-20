@@ -16,10 +16,10 @@ int main()
   //A sample of doubles to model sensor input data.
   double sample[7] = {66.7, 33.2, 3434.43, 126.77, 532.63, 75.34, 564.23};
   double filterData[3] = {0};
+  double sum = 0;
 
   int pos = 0;
   int newAvg = 0;
-  double sum = 0;
   int len = sizeof(filterData) / sizeof(double);
   int count = sizeof(sample) / sizeof(double);
 
@@ -28,9 +28,9 @@ int main()
     newAvg = movingAvg(filterData, &sum, pos, len, sample[i]);
     printf("New average is %d\n", newAvg);
     pos++;
-    if (pos >= len) {
+    
+    if (pos >= len)
       pos = 0;
-    }
   }
 
   return 0;
